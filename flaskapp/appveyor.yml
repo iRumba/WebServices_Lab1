@@ -1,5 +1,9 @@
-language: python
+environment:
+  matrix:
+    - PYTHON_VERSION: "3.9"
+    - PYTHON_VERSION: "3.10"
+
 install:
- - pip3 install flask
-script:
- - python3 ./flaskapp/some_app.py
+  - ps: Install-Python '%PYTHON_VERSION%' x64
+  - ps: $env:Path = "$env:Path;C:\Python%PYTHON_VERSION%\Scripts"
+  - pip install -r requirements.txt
