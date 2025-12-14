@@ -10,5 +10,5 @@ def hello():
     return render_template('hello.html')
 
 # Запускаем приложение
-if __name__ == '__lab1__':
+if __name__ == '__main__':
     app.run(debug=True)
